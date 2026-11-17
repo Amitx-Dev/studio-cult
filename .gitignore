@@ -1,0 +1,38 @@
+# ==============================================================================
+# STUDIO CULT — Git Ignore Configuration
+# ==============================================================================
+
+# OS & Editor Artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Local Backups & Archive Folders
+backup_*/
+*.bak
+*.orig
+
+# Python & Temporary Helper Scripts
+__pycache__/
+*.py[cod]
+*$py.class
+*.tmp
+*.log
+
+# Environment & Credentials
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+
+# Dependencies (if package manager introduced)
+node_modules/
+vendor/
+.npm
+.pnpm-store

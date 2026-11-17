@@ -1,0 +1,364 @@
+/**
+ * STUDIO CULT - Animation System & Keyframe Library
+ * Ultra-Smooth 60FPS Transitions, Orbital Rotation, Floating Physics & Scroll Reveals
+ */
+
+/* --------------------------------------------------------------------------
+   1. Floating & Bobbing Physics
+   -------------------------------------------------------------------------- */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(0.8deg);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(12px) rotate(-0.8deg);
+  }
+}
+
+@keyframes floatDiagonal {
+  0%, 100% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(8px, -10px);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Pulse, Glow & Shimmer
+   -------------------------------------------------------------------------- */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(117, 57, 245, 0.25);
+    opacity: 0.85;
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(236, 72, 153, 0.55);
+    opacity: 1;
+  }
+}
+
+@keyframes pulseSoft {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.85;
+  }
+}
+
+@keyframes shimmerGleam {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Orbital Rotation (Self-Uprighting Satellites)
+   -------------------------------------------------------------------------- */
+@keyframes orbitRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes counterOrbitRotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinReverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. Playful Wiggle & Doodles
+   -------------------------------------------------------------------------- */
+@keyframes gentleWiggle {
+  0%, 100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. Chart Bars Rise
+   -------------------------------------------------------------------------- */
+@keyframes barRise {
+  from {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+  to {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. Tab & Content Fade In
+   -------------------------------------------------------------------------- */
+@keyframes tabFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Utility Animation Classes
+   -------------------------------------------------------------------------- */
+.animate-float {
+  animation: floatSlow 6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 7s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.animate-float-diagonal {
+  animation: floatDiagonal 6.5s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulseSoft 3s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 40s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spinReverse 48s linear infinite;
+}
+
+.animate-glow {
+  animation: pulseGlow 4.5s ease-in-out infinite;
+}
+
+.animate-wiggle {
+  animation: gentleWiggle 4s ease-in-out infinite;
+}
+
+.animate-tabFade {
+  animation: tabFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* --------------------------------------------------------------------------
+   Scroll Reveal System (Intersection Observer Smooth Transition)
+   -------------------------------------------------------------------------- */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* --------------------------------------------------------------------------
+   Hover Transitions & Physics
+   -------------------------------------------------------------------------- */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(117, 57, 245, 0.14);
+}
+
+.hover-scale {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+
+
+/* --------------------------------------------------------------------------
+   5. Hero Floating Elements & Micro-Physics Animations
+   -------------------------------------------------------------------------- */
+@keyframes heroFloatCardLeft {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(-6px, -15px, 0) rotate(-1.5deg);
+  }
+  100% {
+    transform: translate3d(4px, 6px, 0) rotate(0.8deg);
+  }
+}
+
+@keyframes heroFloatCardRight {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(8px, 15px, 0) rotate(1.2deg);
+  }
+  100% {
+    transform: translate3d(-5px, -10px, 0) rotate(-0.8deg);
+  }
+}
+
+@keyframes heroFloatBadge1 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(-7px, -16px, 0) scale(1.06) rotate(-5deg);
+  }
+}
+
+@keyframes heroFloatBadge2 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(8px, -14px, 0) scale(1.08) rotate(6deg);
+  }
+}
+
+@keyframes heroFloatBadge3 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(6px, 14px, 0) scale(1.06) rotate(-4deg);
+  }
+}
+
+@keyframes heroFloatBadge4 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(-8px, 10px, 0) scale(1.05) rotate(-5deg);
+  }
+}
+
+@keyframes heroFloatBadge5 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0px, 12px, 0) scale(1.07) rotate(4deg);
+  }
+}
+
+@keyframes heroDoodleWiggle {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(7deg) scale(1.08) translate(-4px, -4px);
+  }
+}
+
+@keyframes heroPulseAura {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.85;
+  }
+}
+
+@keyframes heroCreatorBreathe {
+  0%, 100% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.012) translateY(-4px);
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   Accessibility: Respect user prefers-reduced-motion system preferences
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

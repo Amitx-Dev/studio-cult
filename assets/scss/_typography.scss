@@ -1,0 +1,124 @@
+// ==========================================================================
+// studiocult - SCSS Typography
+// ==========================================================================
+
+body {
+  font-family: $font-sans;
+  font-size: 15px;
+  line-height: $line-height-base;
+  color: $text-main;
+  background-color: $bg-body;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $font-heading;
+  font-weight: 800;
+  line-height: $line-height-heading;
+  color: $text-main;
+  letter-spacing: -0.035em;
+  margin-bottom: 0.75rem;
+}
+
+h1, .h1 {
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  letter-spacing: -0.05em;
+}
+
+h2, .h2 {
+  font-size: clamp(1.875rem, 3.75vw, 2.75rem);
+  letter-spacing: -0.04em;
+}
+
+h3, .h3 {
+  font-size: clamp(1.35rem, 2.25vw, 1.85rem);
+  letter-spacing: -0.03em;
+}
+
+h4, .h4 {
+  font-size: 1.25rem;
+}
+
+h5, .h5 {
+  font-size: 1.1rem;
+}
+
+h6, .h6 {
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+p {
+  color: $text-muted;
+  margin-bottom: 1.25rem;
+  font-size: 15px;
+  line-height: 1.7;
+
+  &.lead {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.75;
+    color: $text-muted;
+  }
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $primary-dark;
+  }
+}
+
+.text-gradient {
+  @include gradient-text;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: $radius-pill;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $primary;
+  background-color: $primary-subtle;
+  border: 1px solid rgba($primary, 0.2);
+  margin-bottom: 1rem;
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $primary;
+    box-shadow: 0 0 0 4px rgba($primary, 0.2);
+    animation: pulse 2s infinite ease-in-out;
+  }
+
+  &.eyebrow-light {
+    background: rgba($white, 0.15);
+    color: $white;
+    border-color: rgba($white, 0.3);
+
+    .dot {
+      background-color: $white;
+      box-shadow: 0 0 0 4px rgba($white, 0.25);
+    }
+  }
+
+  &.eyebrow-mint {
+    color: #059669;
+    background-color: $accent-mint-light;
+    border-color: rgba(37, 199, 158, 0.3);
+    .dot { background-color: $accent-mint; box-shadow: 0 0 0 4px rgba(37, 199, 158, 0.25); }
+  }
+}
+

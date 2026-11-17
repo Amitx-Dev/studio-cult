@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 212 40" fill="none" width="212" height="40">
+  <rect y="2" width="36" height="36" rx="10" fill="#FFFFFF"/>
+  <path d="M18 12V28M10 20H26M12.5 14.5L23.5 25.5M23.5 14.5L12.5 25.5" stroke="#7539F5" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="46" y="25.5" font-family="'Manrope', -apple-system, BlinkMacSystemFont, sans-serif" font-size="18.5" font-weight="800" fill="#FFFFFF" letter-spacing="0.4">STUDIO CULT<tspan fill="#A87FFB">.</tspan></text>
+</svg>

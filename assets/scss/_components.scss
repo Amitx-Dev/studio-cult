@@ -1,0 +1,357 @@
+// ==========================================================================
+// studiocult - SCSS UI Components & Kit
+// ==========================================================================
+
+// Buttons
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: $font-sans;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  padding: 12px 22px;
+  border-radius: $radius-md;
+  transition: all $transition-base;
+  cursor: pointer;
+  border: 1px solid transparent;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+
+  i, svg {
+    transition: transform $transition-fast;
+    font-size: 0.95em;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    i.fa-arrow-right, svg {
+      transform: translateX(3px);
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+  color: $white;
+  box-shadow: 0 8px 24px rgba(117, 57, 245, 0.28);
+
+  &:hover {
+    background-color: $primary-dark;
+    border-color: $primary-dark;
+    color: $white;
+    box-shadow: 0 12px 28px rgba(117, 57, 245, 0.4);
+  }
+}
+
+.btn-secondary {
+  background-color: $secondary;
+  border-color: $secondary;
+  color: $white;
+  box-shadow: 0 8px 20px rgba(25, 21, 40, 0.15);
+
+  &:hover {
+    background-color: $secondary-light;
+    border-color: $secondary-light;
+    color: $white;
+  }
+}
+
+.btn-white {
+  background-color: $white;
+  border-color: $white;
+  color: $secondary;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  &:hover {
+    background-color: #F8F9FA;
+    color: $primary;
+  }
+}
+
+.btn-outline-primary {
+  background-color: transparent;
+  border-color: $primary;
+  color: $primary;
+
+  &:hover {
+    background-color: $primary;
+    color: $white;
+    box-shadow: 0 8px 20px rgba(117, 57, 245, 0.25);
+  }
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  border-color: rgba($white, 0.4);
+  color: $white;
+
+  &:hover {
+    background-color: $white;
+    border-color: $white;
+    color: $secondary;
+  }
+}
+
+.btn-pill {
+  border-radius: $radius-pill;
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.8125rem;
+  border-radius: $radius-sm;
+}
+
+.btn-lg {
+  padding: 16px 30px;
+  font-size: 1rem;
+  border-radius: $radius-lg;
+}
+
+.btn-icon {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Badges
+.badge-custom {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: $radius-pill;
+  letter-spacing: 0.03em;
+
+  &.badge-primary {
+    background: $primary-subtle;
+    color: $primary;
+  }
+  &.badge-success {
+    background: $accent-mint-light;
+    color: #059669;
+  }
+  &.badge-warning {
+    background: $accent-amber-light;
+    color: #D97706;
+  }
+  &.badge-danger {
+    background: $accent-rose-light;
+    color: #E11D48;
+  }
+  &.badge-info {
+    background: $accent-blue-light;
+    color: #2563EB;
+  }
+}
+
+// Cards
+.card-custom {
+  background: $white;
+  border: 1px solid $border-color;
+  border-radius: $radius-lg;
+  padding: 28px;
+  transition: all $transition-base;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-lg;
+    border-color: rgba($primary, 0.2);
+  }
+
+  &.card-glass {
+    @include glass-card;
+  }
+
+  &.card-featured {
+    border-color: $primary;
+    box-shadow: $shadow-lg;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, $primary, $accent-rose);
+    }
+  }
+}
+
+// Icon Box
+.icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: $radius-md;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 1.25rem;
+  transition: transform $transition-fast;
+
+  &.icon-box-primary {
+    background: $primary-subtle;
+    color: $primary;
+  }
+  &.icon-box-mint {
+    background: $accent-mint-light;
+    color: $accent-mint;
+  }
+  &.icon-box-peach {
+    background: $accent-peach-light;
+    color: $accent-peach;
+  }
+  &.icon-box-blue {
+    background: $accent-blue-light;
+    color: $accent-blue;
+  }
+}
+
+.card-custom:hover .icon-box {
+  transform: scale(1.08) rotate(3deg);
+}
+
+// Form Controls
+.form-control-custom {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 14px;
+  font-family: $font-sans;
+  color: $text-main;
+  background-color: $white;
+  border: 1.5px solid $border-color;
+  border-radius: $radius-md;
+  transition: all $transition-fast;
+  outline: none;
+
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0 0 0 4px rgba($primary, 0.12);
+  }
+
+  &::placeholder {
+    color: $text-light;
+  }
+}
+
+// Section styling
+.section-padding {
+  padding: 100px 0;
+  position: relative;
+
+  @include media-down(md) {
+    padding: 60px 0;
+  }
+}
+
+.section-title-wrap {
+  margin-bottom: 3.5rem;
+
+  &.text-center {
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// Stat Counter Card
+.stat-item {
+  text-align: center;
+  padding: 20px 10px;
+
+  .stat-number {
+    font-family: $font-heading;
+    font-weight: 800;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    letter-spacing: -0.04em;
+    color: $secondary;
+    line-height: 1.1;
+
+    .stat-suffix {
+      color: $primary;
+      font-size: 0.75em;
+    }
+  }
+
+  .stat-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: $text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 8px;
+  }
+}
+
+// Back to Top button
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: $white;
+  color: $primary;
+  border: 1.5px solid $border-color;
+  box-shadow: $shadow-md;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all $transition-base;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    background: $primary;
+    color: $white;
+    border-color: $primary;
+    transform: translateY(-3px);
+  }
+
+  .progress-ring {
+    position: absolute;
+    inset: -1.5px;
+    width: calc(100% + 3px);
+    height: calc(100% + 3px);
+    pointer-events: none;
+    transform: rotate(-90deg);
+
+    circle {
+      fill: none;
+      stroke: $primary;
+      stroke-width: 2.5;
+      stroke-dasharray: 157;
+      stroke-dashoffset: 157;
+      transition: stroke-dashoffset 0.15s ease;
+    }
+  }
+}
+

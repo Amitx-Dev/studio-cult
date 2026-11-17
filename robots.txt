@@ -1,0 +1,12 @@
+# ==============================================================================
+# STUDIO CULT - Production Robots Configuration
+# https://studiocult.in
+# ==============================================================================
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /404.html
+
+# Sitemap Location
+Sitemap: https://studiocult.in/sitemap.xml

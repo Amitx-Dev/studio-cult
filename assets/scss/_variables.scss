@@ -1,0 +1,85 @@
+// ==========================================================================
+// studiocult - Social Media Management Studio & Agency Template
+// SCSS Variables & Design Tokens
+// ==========================================================================
+
+// Color Palette
+$primary: #7539F5;
+$primary-dark: #5C23D8;
+$primary-light: #9B6CFF;
+$primary-subtle: #F4EFFF;
+$primary-glow: rgba(117, 57, 245, 0.25);
+
+$secondary: #191528;
+$secondary-dark: #0F0B1C;
+$secondary-light: #2D2644;
+
+$accent-peach: #FF8F6B;
+$accent-peach-light: #FFF1EC;
+$accent-mint: #25C79E;
+$accent-mint-light: #EAF8F4;
+$accent-amber: #F59E0B;
+$accent-amber-light: #FFFBEB;
+$accent-rose: #EC4899;
+$accent-rose-light: #FDF2F8;
+$accent-blue: #3B82F6;
+$accent-blue-light: #EFF6FF;
+
+// Neutral Grays
+$white: #FFFFFF;
+$dark: #191528;
+$text-main: #191528;
+$text-muted: #6F6980;
+$text-light: #9E99AD;
+$border-color: #EDE8F5;
+$border-light: #F3F0F8;
+$bg-body: #FFFFFF;
+$bg-light: #FAF8FF;
+$bg-surface: #FFFFFF;
+$bg-card: #FFFFFF;
+$bg-dark: #110D20;
+
+// Typography
+$font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+$font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+$font-mono: 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+
+$font-size-base: 1rem; // 16px
+$font-size-sm: 0.875rem; // 14px
+$font-size-xs: 0.75rem; // 12px
+$font-size-xxs: 0.6875rem; // 11px
+$line-height-base: 1.6;
+$line-height-tight: 1.25;
+$line-height-heading: 1.15;
+
+// Shadows
+$shadow-xs: 0 2px 4px rgba(25, 21, 40, 0.04);
+$shadow-sm: 0 4px 10px rgba(25, 21, 40, 0.06);
+$shadow-md: 0 10px 25px rgba(25, 21, 40, 0.07);
+$shadow-lg: 0 20px 45px rgba(117, 57, 245, 0.12);
+$shadow-xl: 0 30px 70px rgba(117, 57, 245, 0.16);
+$shadow-glow: 0 12px 35px rgba(117, 57, 245, 0.35);
+
+// Border Radius
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-lg: 16px;
+$radius-xl: 24px;
+$radius-pill: 50rem;
+$radius-circle: 50%;
+
+// Transitions
+$transition-fast: 0.18s ease;
+$transition-base: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+$transition-slow: 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+
+// Breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
